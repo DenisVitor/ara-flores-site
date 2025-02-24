@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+header {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 1px 2px 6px 5px lightgray;
+  overflow: hidden;
+  animation: titleflip 0.6s ease none;
+  .free-flower-one {
+    position: absolute;
+    width: 19rem;
+    height: 18rem;
+    z-index: -1;
+    transform: rotate(80deg);
+    left: 10rem;
+    top: -7.5rem;
+    transition: 0.2s ease;
+    animation: flowershowone 1s ease none;
+  }
+  .free-flower-two {
+    position: absolute;
+    width: 18rem;
+    height: 16rem;
+    transform: rotate(190deg);
+    z-index: -2;
+    right: 23rem;
+    top: -3.1rem;
+    transition: 0.2s ease;
+    animation: flowershowtwo 1.2s ease none;
+  }
+  .free-flower-three {
+    position: absolute;
+    width: 21rem;
+    height: 10rem;
+    transform: rotate(350deg);
+    z-index: -2;
+    right: 53rem;
+    top: 0.75rem;
+    transition: 0.2s ease;
+    animation: flowershowthree 1.2s ease none;
+  }
+  .free-flower-four {
+    position: absolute;
+    width: 25rem;
+    height: 20rem;
+    transform: rotate(0deg);
+    z-index: -2;
+    right: -2rem;
+    top: 0rem;
+    transition: 0.2s ease;
+    animation: flowershowfour 1.2s ease none;
+  }
+  .header-image {
+    width: 7rem;
+    height: 7rem;
+    padding: 0;
+    margin: 0;
+    transition: 0.1s ease;
+    animation: logopopup 1s ease none;
+  }
+  .header-text {
+    display: flex;
+    padding-left: 20rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .header-text-big {
+      font-family: "Dancing Script", serif;
+      font-weight: large;
+      font-size: 60px;
+      color: #c2bb34;
+      transition: 0.1s ease;
+      animation: titleflip 1s ease none;
+    }
+    .header-text-small {
+      font-weight: 900;
+      font-family: "Merriweather", sans-serif;
+      color: #c2bb34;
+      transition: 0.1s ease;
+      animation: titleflip 1.6s ease none;
+    }
+  }
+  .header-navigation {
+    width: fit-content;
+    display: flex;
+    .header-navigation-list {
+      display: flex;
+      list-style: none;
+      justify-content: space-around;
+      gap: 1rem;
+      flex-grow: 0;
+   
+      .header-navigation-item {
+        font-family: "Merriweather", sans-serif;
+        font-size: 0.9rem;
+        color: #c2bb34;
+        transition: 0.1s ease;
+        cursor: pointer;
+        border: 1px solid transparent;
+        padding: 0.7rem;
+        user-select: none;
+        transition: 0.1s ease;
+        border-radius: 1rem;
+        background-color: white;
+        &:nth-child(1) {
+          animation: swingmenu 0.8s ease none;
+        }
+        &:nth-child(2) {
+          animation: swingmenu 1.2s ease none;
+        }
+        &:nth-child(3) {
+          animation: swingmenu 1.4s ease none;
+        }
+        &:hover {
+          transform: scale(1.06);
+          border-color: #c2bb34 transparent;
+          border-radius: 1rem;
+        }
+        &:active {
+          transform: scale(1);
+          background-color: #c2bb34;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@keyframes flowershowone {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) translateX(-50px) translateY(-340px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(80deg);
+  }
+}
+
+@keyframes flowershowtwo {
+  0% {
+    opacity: 0;
+
+    transform: translateY(160px) rotate(80deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) rotate(190deg);
+  }
+}
+
+@keyframes flowershowthree {
+  0% {
+    opacity: 0;
+
+    transform: translateY(160px) rotate(480deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) rotate(350deg);
+  }
+}
+
+@keyframes flowershowfour {
+  0% {
+    opacity: 0;
+
+    transform: translateY(-160px) rotate(50deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes logopopup {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes titleflip {
+  0% {
+    opacity: 0;
+    transform: rotateX(-100deg);
+    transform-origin: top;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    transform-origin: top;
+  }
+}
+
+@keyframes swingmenu {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
