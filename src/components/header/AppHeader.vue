@@ -36,6 +36,7 @@
         <li class="header-navigation-item">Contato</li>
       </ul>
     </nav>
+    
   </header>
 </template>
 <style src="/src/components/header/AppHeaderStyle.less"></style>

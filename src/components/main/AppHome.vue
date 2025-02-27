@@ -1,5 +1,27 @@
 <template>
   <main class="main-flower">
+    <section class="main-flower-section-one">
+      <div class="main-flower-section-text">
+        <h1>Olá, Seja bem vindo ao Ara Flores</h1>
+        <p>Aqui você encontrará o melhor da região no quesito flores</p>
+      </div>
+      <ul class="main-flower-section-list">
+        <li>
+          <video autoplay loop muted src="public/media/videobgone.mp4"></video>
+        </li>
+        <li>
+          <video autoplay loop muted src="public/media/videobgtwo.mp4"></video>
+        </li>
+        <li>
+          <video
+            autoplay
+            loop
+            muted
+            src="public/media/videobgthree.mp4"
+          ></video>
+        </li>
+      </ul>
+    </section>
     <section class="main-flower-sec">
       <hgroup class="main-flower-text">
         <h1>Confira Aqui, um pouco de nosso trabalho!</h1>
@@ -113,6 +135,23 @@
         </div>
       </figure>
     </section>
+    <section class="main-flower-section-two">
+      <div class="main-flower-section-text-two">
+        <h1>Aqui, Você encontra de tudo!</h1>
+        <p>
+          Na nossa empresa, transformamos flores em verdadeiras obras de arte,
+          trazendo beleza e emoção para cada ocasião. Elaboramos coroas de
+          flores com detalhes minuciosos, perfeitas para celebrar momentos
+          especiais. Desenvolvemos ornamentos exclusivos que adicionam um toque
+          de elegância a qualquer ambiente. Cada arranjo é cuidadosamente
+          planejado para transmitir a personalidade e o estilo do cliente. Nossa
+          equipe é movida pela paixão em criar composições que surpreendem e
+          encantam. Atendemos a eventos, casamentos, aniversários e diversas
+          outras celebrações com criatividade. Descubra como nosso universo
+          floral pode transformar seus momentos em memórias inesquecíveis!
+        </p>
+      </div>
+    </section>
     <section class="main-flower-sec-two">
       <div class="main-flower-text-two">
         <hgroup class="main-flower-title-line">
@@ -136,6 +175,15 @@
           />
         </NuxtMarquee>
       </div>
+    </section>
+    <section class="main-flower-section-three">
+      <div class="main-flower-section-text-three">
+        <h1>Venha nos visitar</h1>
+        <p>e conferir nosso trabalho em primeira mão.</p>
+        <sub>1387 R. Expedicionário Brasileiro</sub>
+        <sub>Arapiraca, Alagoas</sub>
+      </div>
+      <img src="public\logo\location.png" alt="image-location" />
     </section>
     <section class="main-flower-sec-three">
       <div class="main-flower-form">
