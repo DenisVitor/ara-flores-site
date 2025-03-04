@@ -46,8 +46,8 @@
 </template>
 
 <script setup lang="ts">
-import { flowerGalleryList } from "~/server/mock/flowerGalleryList";
-import type { GalleryFlowers } from "~/server/mock/flowerGalleryList";
+import { flowerGalleryList } from "~/mock/flowerGalleryList";
+import type { GalleryFlowers } from "~/mock/flowerGalleryList";
 
 const selectedItem = ref<GalleryFlowers | null>(null);
 const showModal = ref(false);

@@ -231,7 +231,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { flowerList } from "@/server/mock/flowerList";
+import { flowerList } from "~/mock/flowerList";
 
 const index = ref(0);
 const transition = ref("slide-forward");

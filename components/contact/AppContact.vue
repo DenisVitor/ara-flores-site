@@ -41,6 +41,4 @@
   </main>
 </template>
 <style src="./AppContactStyle.less"></style>
-<script setup lang="ts">
-const isOpen = ref(false);
-</script>
+<script setup lang="ts"></script>
