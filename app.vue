@@ -1,8 +1,9 @@
-<script setup lang="ts">
-import AppFooter from "./src/components/footer/AppFooter.vue";
-import AppHeader from "./src/components/header/AppHeader.vue";
-import AppHome from "./src/components/main/AppHome.vue";
-</script>
+<template>
+  <div>
+    <NuxtPage />
+  </div>
+</template>
+
 <style lang="css">
 html,
 body {
@@ -13,10 +14,3 @@ body {
   box-sizing: border-box;
 }
 </style>
-<template>
-  <div>
-    <AppHeader />
-    <AppHome />
-    <AppFooter />
-  </div>
-</template>

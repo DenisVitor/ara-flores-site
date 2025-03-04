@@ -15,11 +15,13 @@
       src="/public/logo/flowerbg3.png"
       alt="flowerbg3"
     />
-    <img
-      class="header-image"
-      src="/public/logo/file-removebg-preview.png"
-      alt="Logo-ara-flores"
-    />
+    <NuxtLink to="/">
+      <img
+        class="header-image"
+        src="/public/logo/file-removebg-preview.png"
+        alt="Logo-ara-flores"
+      />
+    </NuxtLink>
     <img
       class="free-flower-four"
       src="/public/logo/flowerbgfour.png"
@@ -31,12 +33,17 @@
     </div>
     <nav class="header-navigation">
       <ul class="header-navigation-list">
-        <li class="header-navigation-item">Home</li>
-        <li class="header-navigation-item">Conheça nosso trabalho</li>
-        <li class="header-navigation-item">Contato</li>
+        <li class="header-navigation-item">
+          <NuxtLink to="/"> Home </NuxtLink>
+        </li>
+        <li class="header-navigation-item">
+          <NuxtLink to="/gallery">Galeria</NuxtLink>
+        </li>
+        <li class="header-navigation-item">
+          <NuxtLink to="/contact"> Contato </NuxtLink>
+        </li>
       </ul>
     </nav>
-    
   </header>
 </template>
-<style src="/src/components/header/AppHeaderStyle.less"></style>
+<style src="./AppHeaderStyle.less"></style>

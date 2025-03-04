@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.main-contact {
+  display: flex;
+  flex-direction: column;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .main-contact-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+    margin: 3rem 0;
+    animation: extendlineupper 1s ease none;
+    background: linear-gradient(
+      128deg,
+      rgba(53, 86, 28, 0.9) 0%,
+      rgba(186, 166, 33, 0.9) 100%
+    );
+    .main-contact-title-text {
+      border: 2px solid lightgray;
+      border-left: 0px;
+      border-right: 0px;
+      box-shadow: 1px 1px 20px 0.1px lightgray;
+      width: 100%;
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        font-size: 70px;
+        font-family: "Dancing Script", sans-serif;
+        color: #c2bb34;
+      }
+      p {
+        font-size: 18px;
+        font-family: "Merriweather", sans-serif;
+        color: white;
+        font-weight: 200;
+      }
+    }
+  }
+  .main-contact-sec-one {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    box-shadow: 1px 2px 2px 6px lightgray;
+    padding: 2rem;
+    transition: 0.1s ease;
+    animation: goinleft 1s ease-out none;
+    .main-contact-sec-one-image {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 40dvw;
+        border-radius: 1rem;
+      }
+    }
+    .main-contact-sec-one-location {
+      display: flex;
+      height: 100%;
+      width: 50%;
+      flex-direction: column;
+      gap: 2rem;
+      h1 {
+        font-family: "Dancing Script", sans-serif;
+        font-size: 70px;
+        color: #c2bb34;
+      }
+      .main-contact-sec-one-location-subtext {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        font-family: "Merriweather", sans-serif;
+        font-style: italic;
+        font-weight: 600;
+      }
+    }
+  }
+  .main-contact-sec-two {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 8rem 0;
+    .main-contact-sec-two-form {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      .main-contact-form-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding-right: 3rem;
+      }
+      label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        span {
+          color: #35561c;
+          font-family: "Dancing Script";
+          font-size: 1.5rem;
+          width: 8rem;
+          animation: fadetextright 1s ease none;
+        }
+        input {
+          font-size: 20px;
+          width: 100%;
+          outline: none;
+          border: 1px solid #c2bb34;
+          border-radius: 0.2rem;
+          padding: 0.3rem;
+          animation: extendline 1s ease none;
+        }
+        textarea {
+          width: 100%;
+          outline: none;
+          padding: 0.3rem;
+          border-color: #c2bb34;
+          animation: extendline 1s ease none;
+        }
+      }
+    }
+    button {
+      all: unset;
+      border: 1px solid #c2bb34;
+      align-self: center;
+      width: 30%;
+      height: 2rem;
+      text-align: center;
+      border-radius: 1rem;
+      margin-top: 2rem;
+      font-size: 18px;
+      font-weight: 600;
+      color: #c2bb34;
+      font-family: "Merriweather", sans-serif;
+      transition: 0.06s ease;
+      cursor: pointer;
+      animation: fadetextbottom 1s ease none;
+      &:hover {
+        transform: scale(1.04);
+        box-shadow: 1px 2px 5px 2px darkgray;
+      }
+      &:active {
+        transform: scale(1);
+        box-shadow: none;
+      }
+    }
+  }
+  .main-contact-sec-two-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(
+      128deg,
+      rgba(53, 86, 28, 1) 0%,
+      rgba(186, 166, 33, 1) 100%
+    );
+    border-radius: 2rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    justify-content: center;
+    h1 {
+      font-size: 50px;
+      color: white;
+      font-family: "Dancing Script", sans-serif;
+      animation: fadetextright 1s ease none;
+    }
+    p {
+      font-size: 20px;
+      color: white;
+      font-family: "Merriweather", sans-serif;
+      font-weight: 200;
+      animation: fadetextbottom 1.2s ease none;
+    }
+  }
+}
+
+@keyframes extendlineupper {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes goinleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100dvw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

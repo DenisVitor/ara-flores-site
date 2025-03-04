@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.flower-gallery {
+  display: flex;
+  flex-direction: column;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .flower-gallery-sec-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+    margin: 3rem 0;
+    animation: extendlineupper 1s ease none;
+    background: linear-gradient(
+      128deg,
+      rgba(53, 86, 28, 0.9) 0%,
+      rgba(186, 166, 33, 0.9) 100%
+    );
+    .flower-gallery-sec-one-text {
+      border: 2px solid lightgray;
+      border-left: 0px;
+      border-right: 0px;
+      box-shadow: 1px 1px 20px 0.1px lightgray;
+      width: 100%;
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        font-size: 70px;
+        font-family: "Dancing Script", sans-serif;
+        color: #c2bb34;
+      }
+      p {
+        font-size: 18px;
+        font-family: "Merriweather", sans-serif;
+        color: white;
+        font-weight: 200;
+      }
+    }
+  }
+  .flower-gallery-sec-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .flower-gallery-sec-two-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0 2rem;
+      margin: 6rem 0;
+      gap: 3rem;
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        transition: 0.1s ease;
+        animation: fadeleft 1s ease none;
+        &:hover {
+          transform: scale(1.07);
+          h4 {
+            border-left: 6px solid #c2bb34;
+            padding-left: 25%;
+            cursor: pointer;
+            transition: 0.1s ease;
+            user-select: none;
+            &:hover {
+              font-weight: 600;
+            }
+            &:active {
+              color: #c2bb34;
+            }
+          }
+          p {
+            border-right: 6px solid #c2bb34;
+            padding-right: 35%;
+          }
+        }
+        img {
+          width: 10rem;
+          height: 15rem;
+          object-fit: cover;
+          image-rendering: pixelated;
+          border-radius: 0.5rem;
+        }
+        h4 {
+          font-size: 14px;
+          font-family: "Merriweather", sans-serif;
+          font-weight: 200;
+          text-transform: capitalize;
+          border-left: 2px solid #c2bb34;
+          padding-left: 0.5rem;
+          transition: 0.2s ease;
+        }
+        p {
+          font-weight: 600;
+          font-size: 20px;
+          font-family: "Dancing Script", sans-serif;
+          text-align: end;
+          border-right: 2px solid #c2bb34;
+          padding-right: 0.5rem;
+          transition: 0.2s ease;
+        }
+      }
+    }
+  }
+}
+
+.main-gallery-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .main-gallery-modal {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem 4rem;
+    animation: extendlineupper 0.5s ease none;
+    gap: 2rem;
+    border-radius: 1rem;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .main-gallery-modal-close {
+      text-align: end;
+      font-family: "Dancing Script", sans-serif;
+      font-size: 22px;
+      transition: 0.1s ease;
+      width: fit-content;
+      margin-left: 99%;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50rem;
+      user-select: none;
+      &:hover {
+        background-color: #c2bb34;
+        color: white;
+      }
+      &:active {
+        color: #c2bb34;
+        background-color: black;
+      }
+    }
+    img {
+      height: 18rem;
+      width: 40dvw;
+      object-fit: cover;
+      border-radius: 1rem;
+      animation: showup 1s ease none;
+    }
+    .main-gallery-modal-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border: 1px solid #c2bb34;
+      padding: 0.5rem 3rem;
+      border-radius: 1rem;
+      animation: fadeleft 1s ease none;
+      h1 {
+        text-align: center;
+        font-size: 50px;
+        font-family: "Dancing Script", sans-serif;
+        color: #c2bb34;
+        font-weight: 600;
+      }
+      h4 {
+        text-align: center;
+        font-size: 18px;
+        font-family: "Merriweather", sans-serif;
+      }
+      div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        h5 {
+          font-size: 20px;
+          font-family: "Dancing Script", sans-serif;
+          font-weight: 800;
+        }
+        p {
+          font-family: "Merriweather", sans-serif;
+          font-size: 14px;
+        }
+      }
+    }
+    button {
+      all: unset;
+      border: 1px solid #c2bb34;
+      align-self: center;
+      width: 100%;
+      height: 2rem;
+      text-align: center;
+      border-radius: 1rem;
+      font-size: 18px;
+      font-weight: 600;
+      color: #c2bb34;
+      font-family: "Merriweather", sans-serif;
+      transition: 0.06s ease;
+      cursor: pointer;
+      animation: fadetextbottom 1s ease none;
+      &:hover {
+        transform: scale(1.04);
+        box-shadow: 1px 2px 5px 2px darkgray;
+      }
+      &:active {
+        transform: scale(1);
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+@keyframes extendlineupper {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fadeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes showup {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

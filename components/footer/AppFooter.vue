@@ -7,9 +7,15 @@
     />
     <ul class="footer-list">
       <li class="footer-item-first">Páginas</li>
-      <li class="footer-item">Home</li>
-      <li class="footer-item">Galeria</li>
-      <li class="footer-item">Contato</li>
+      <NuxtLink to="/">
+        <li class="footer-item">Home</li>
+      </NuxtLink>
+      <NuxtLink to="/gallery">
+        <li class="footer-item">Galeria</li>
+      </NuxtLink>
+      <NuxtLink to="/contact">
+        <li class="footer-item">Contato</li>
+      </NuxtLink>
     </ul>
     <div class="footer-status">
       <h4>Ara flores Floricultura</h4>

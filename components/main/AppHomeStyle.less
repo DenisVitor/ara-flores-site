@@ -1,0 +1,588 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.main-flower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7rem;
+
+  .deactive {
+    opacity: 0;
+  }
+
+  .firstActive {
+    opacity: 1;
+    animation: fadetextright 1s ease none;
+  }
+
+  .main-flower-sec {
+    display: flex;
+    margin: 0 4rem 5rem 4rem;
+    box-shadow: 1px 2px 17px 10px lightgray;
+    border-radius: 1rem;
+    .main-flower-text {
+      width: 50%;
+      display: flex;
+      gap: 2rem;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+      border-radius: 1rem;
+      flex-grow: 1;
+      background: linear-gradient(
+        128deg,
+        rgba(53, 86, 28, 1) 0%,
+        rgba(186, 166, 33, 1) 100%
+      );
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      h1 {
+        font-size: 57px;
+        color: white;
+        font-family: "Dancing Script", sans-serif;
+        animation: fadetextright 1s ease none;
+      }
+      h3 {
+        font-size: 25px;
+        color: white;
+        font-family: "Merriweather", sans-serif;
+        animation: fadetextright 1.2s ease none;
+      }
+      p {
+        font-size: 20px;
+        font-weight: 200;
+        color: white;
+        font-family: "Roboto", sans-serif;
+        animation: fadetextright 1.3s ease none;
+      }
+    }
+    .main-flower-slider {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      align-items: center;
+      padding-top: 2rem;
+      gap: 1rem;
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      img {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+        border-radius: 1rem;
+        transition: 0.1s ease;
+
+        &:hover {
+          transform: scale(1.04);
+          box-shadow: 1px 2px 10px 6px lightgray;
+        }
+      }
+      p {
+        font-weight: 600;
+        font-size: 40px;
+        font-family: "Dancing Script", sans-serif;
+        color: #c2bb34;
+        animation: fadetextbottom 1s ease none;
+      }
+      .main-flowers-slider-buttons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        div {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          cursor: pointer;
+          user-select: none;
+          &:hover {
+            transform: scale(1.04);
+          }
+          &:active {
+            transform: scale(1);
+            svg,
+            h4 {
+              color: black;
+            }
+          }
+          h4 {
+            font-size: 18px;
+            color: #c2bb34;
+            font-weight: 200;
+            font-family: "Merriweather";
+            cursor: pointer;
+            &:nth-child(1) {
+              animation: fadetextbottom 1.2s ease none;
+            }
+            &:nth-child(2) {
+              animation: fadetextbottom 1.4s ease none;
+            }
+          }
+        }
+        svg {
+          width: 2rem;
+          height: 2rem;
+          cursor: pointer;
+          color: #c2bb34;
+          &:nth-child(1) {
+            animation: fadetextbottom 1.2s ease none;
+          }
+          &:nth-child(2) {
+            animation: fadetextbottom 1.4s ease none;
+          }
+        }
+      }
+    }
+  }
+
+  .secondActive {
+    opacity: 1;
+    animation: extendline 1.2s ease none;
+  }
+  .main-flower-section-one {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    height: 100dvh;
+    margin-bottom: 7rem;
+    .main-flower-section-text {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: extendline 1s ease none;
+      background: linear-gradient(
+        60deg,
+        rgba(53, 86, 28, 0.4) 20%,
+        rgba(186, 166, 33, 0.4) 100%
+      );
+      h1 {
+        font-size: 60px;
+        font-family: "Dancing Script", sans-serif;
+        color: #c2bb34;
+        padding: 0;
+        margin: 0;
+      }
+      p {
+        font-family: "Merriweather", sans-serif;
+        font-weight: 200;
+        font-size: 22px;
+        color: white;
+      }
+    }
+    .main-flower-section-list {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0;
+      margin: 0;
+      z-index: -1;
+      li {
+        width: 33.34%;
+        &:nth-child(1) {
+          animation: fademediabottom 1s ease none;
+        }
+        &:nth-child(2) {
+          animation: fademediaupper 1s ease none;
+        }
+        &:nth-child(3) {
+          animation: fademediabottom 1s ease none;
+        }
+        video {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .thirdActive {
+    opacity: 1;
+    animation: fadetextright 1s ease none;
+  }
+
+  .main-flower-section-two {
+    display: flex;
+    margin: 3rem 0;
+    .main-flower-section-text-two {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-size: 50px;
+        font-family: "Dancing Script", sans-serif;
+        padding: 0 4rem;
+        border-bottom: 7px inset;
+        padding-bottom: 1rem;
+        color: #c2bb34;
+        animation: fadetextbottom 1.2s ease none;
+      }
+      p {
+        padding: 0 4rem;
+        font-family: "Merriweather", sans-serif;
+        font-size: 16px;
+        font-weight: 200;
+        text-align: end;
+        letter-spacing: 0.1rem;
+        word-spacing: 0.4rem;
+        animation: fadetextleft 1.2s ease none;
+      }
+    }
+  }
+
+  .fourthActive {
+    opacity: 1;
+    animation: fadetextbottom 0.8s ease none;
+  }
+  .main-flower-sec-two {
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    margin: 5rem 0;
+    border: 3px solid #c2bb34;
+    border-top: transparent;
+    border-top-left-radius: 6.5rem;
+    box-shadow: 1px 2px 16px 10px lightgray;
+    .main-flower-text-two {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #c2bb34;
+      border-top-left-radius: 6rem;
+      border-bottom-right-radius: 6rem;
+      a {
+        all: unset;
+      }
+      .main-flower-title-line {
+        display: flex;
+        width: 100%;
+        gap: 3rem;
+        justify-content: center;
+        align-items: center;
+        h1 {
+          font-size: 50px;
+          font-family: "Dancing Script", sans-serif;
+          color: white;
+          transition: 0.1s ease;
+          animation: fadetextbottom 0.8s ease none;
+        }
+        span {
+          width: 100%;
+          background-color: white;
+          height: 0.3rem;
+          border-radius: 5rem;
+          transition: 0.1s ease;
+          animation: extendline 1s ease none;
+        }
+      }
+      p {
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-family: "Merriweather", sans-serif;
+        font-weight: 300;
+        color: white;
+        transition: 0.1s ease;
+        animation: fadetextright 1s ease none;
+      }
+      button {
+        all: unset;
+        margin-bottom: 2rem;
+        background-color: white;
+        padding: 0.5rem 2rem;
+        font-size: 18px;
+        font-family: "Roboto";
+        border-radius: 0.5rem;
+        color: #c2bb34;
+        cursor: pointer;
+        transition: 0.05s ease;
+        animation: extendline 1.4s ease none;
+
+        &:hover {
+          box-shadow: 1px 4px 4px 1px darkgray;
+          transform: scale(1.04);
+        }
+        &:active {
+          box-shadow: none;
+          transform: scale(1);
+        }
+      }
+    }
+    .main-flower-marquee {
+      display: flex;
+      padding: 1rem;
+      margin-top: 2rem;
+      width: 90%;
+      img {
+        padding: 0 2rem;
+        height: 20rem;
+        width: 16rem;
+        object-fit: cover;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .main-flower-section-three {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(
+      60deg,
+      rgba(53, 86, 28, 1) 20%,
+      rgba(186, 166, 33, 1) 100%
+    );
+    width: 100%;
+    padding: 2rem 0;
+    justify-content: center;
+    img {
+      width: 50%;
+      margin-right: 2rem;
+      height: 30rem;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 1px 2px 20px 5px darkgray;
+      animation: fadetextbottom 1s ease none;
+    }
+    .main-flower-section-text-three {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      color: white;
+      animation: extendline 1s ease none;
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        font-size: 60px;
+        font-family: "Dancing Script", sans-serif;
+      }
+      p {
+        font-family: "Merriweather", sans-serif;
+        font-size: 17px;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
+      }
+      sub {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .fifthActive {
+    opacity: 1;
+    animation: fadetextupper 1s ease none;
+  }
+
+  .main-flower-sec-three {
+    display: flex;
+    width: 95%;
+    box-shadow: 1px 5px 10px 10px lightgray;
+    margin: 6rem 0;
+    border-radius: 2rem;
+    .main-flower-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      width: 50%;
+      .main-flower-form-inner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+        label {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+          span {
+            color: #35561c;
+            font-family: "Dancing Script";
+            font-size: 1.5rem;
+            width: 8rem;
+            animation: fadetextright 1s ease none;
+          }
+          input {
+            font-size: 20px;
+            width: 100%;
+            outline: none;
+            border: 1px solid #c2bb34;
+            border-radius: 0.2rem;
+            padding: 0.3rem;
+            animation: extendline 1s ease none;
+          }
+          textarea {
+            width: 100%;
+            outline: none;
+            padding: 0.3rem;
+            border-color: #c2bb34;
+            animation: extendline 1s ease none;
+          }
+        }
+      }
+      button {
+        all: unset;
+        border: 1px solid #c2bb34;
+        align-self: center;
+        width: 30%;
+        height: 2rem;
+        text-align: center;
+        border-radius: 1rem;
+        font-size: 18px;
+        font-weight: 600;
+        color: #c2bb34;
+        font-family: "Merriweather", sans-serif;
+        transition: 0.06s ease;
+        cursor: pointer;
+        animation: fadetextbottom 1s ease none;
+        &:hover {
+          transform: scale(1.04);
+          box-shadow: 1px 2px 5px 2px darkgray;
+        }
+        &:active {
+          transform: scale(1);
+          box-shadow: none;
+        }
+      }
+    }
+    .main-flower-text-three {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      align-items: center;
+      background: linear-gradient(
+        128deg,
+        rgba(53, 86, 28, 1) 0%,
+        rgba(186, 166, 33, 1) 100%
+      );
+      border-radius: 2rem;
+      justify-content: center;
+      h1 {
+        font-size: 50px;
+        color: white;
+        font-family: "Dancing Script", sans-serif;
+        animation: fadetextright 1s ease none;
+      }
+      p {
+        font-size: 20px;
+        color: white;
+        font-family: "Merriweather", sans-serif;
+        font-weight: 200;
+        animation: fadetextbottom 1.2s ease none;
+      }
+    }
+  }
+}
+.slide-forward-enter-active,
+.slide-forward-leave-active {
+  transition: all 0.5s ease;
+}
+.slide-forward-enter-from {
+  transform: translateX(100px);
+  opacity: 0;
+}
+.slide-forward-leave-to {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.slide-backward-enter-active,
+.slide-backward-leave-active {
+  transition: all 0.5s ease;
+}
+.slide-backward-enter-from {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+.slide-backward-leave-to {
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+@keyframes fadetextright {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadetextleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadetextbottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadetextupper {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes extendline {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fademediabottom {
+  0% {
+    transform: translateY(950px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fademediaupper {
+  0% {
+    transform: translateY(-950px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

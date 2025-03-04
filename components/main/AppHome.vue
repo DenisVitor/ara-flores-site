@@ -22,7 +22,11 @@
         </li>
       </ul>
     </section>
-    <section class="main-flower-sec">
+    <section
+      ref="firstAnimated"
+      data-active="firstActive"
+      class="main-flower-sec deactive"
+    >
       <hgroup class="main-flower-text">
         <h1>Confira Aqui, um pouco de nosso trabalho!</h1>
         <h3>Dê uma olhada em nossos variados buquês e coroas.</h3>
@@ -35,13 +39,13 @@
       <figure class="main-flower-slider">
         <Transition :name="transition" mode="out-in">
           <img
-            :key="FlowerList[index].name"
-            :src="FlowerList[index].image"
-            :alt="FlowerList[index].name"
+            :key="flowerList[index].name"
+            :src="flowerList[index].image"
+            :alt="flowerList[index].name"
           />
         </Transition>
         <figcaption>
-          <p>{{ FlowerList[index].name }}</p>
+          <p>{{ flowerList[index].name }}</p>
         </figcaption>
         <div class="main-flowers-slider-buttons">
           <div @click="prevFlower" title="Anterior">
@@ -135,7 +139,11 @@
         </div>
       </figure>
     </section>
-    <section class="main-flower-section-two">
+    <section
+      data-active="secondActive"
+      class="main-flower-section-two deactive"
+      ref="secondAnimated"
+    >
       <div class="main-flower-section-text-two">
         <h1>Aqui, Você encontra de tudo!</h1>
         <p>
@@ -152,14 +160,20 @@
         </p>
       </div>
     </section>
-    <section class="main-flower-sec-two">
+    <section
+      ref="thirdAnimated"
+      data-active="thirdActive"
+      class="main-flower-sec-two deactive"
+    >
       <div class="main-flower-text-two">
         <hgroup class="main-flower-title-line">
           <span class="line"></span>
           <h1>Galeria</h1>
           <span class="line"></span>
         </hgroup>
-        <button>Veja agora</button>
+        <NuxtLink to="/gallery">
+          <button>Veja Agora</button>
+        </NuxtLink>
         <p>
           Se gostou do nosso trabalho, venha conferir todos os frutos de nosso
           serviço!
@@ -168,7 +182,7 @@
       <div class="main-flower-marquee">
         <NuxtMarquee :gradient="true">
           <img
-            v-for="(item, index) in FlowerList"
+            v-for="(item, index) in flowerList"
             :src="item.image"
             :alt="item.name"
             :key="index"
@@ -176,7 +190,11 @@
         </NuxtMarquee>
       </div>
     </section>
-    <section class="main-flower-section-three">
+    <section
+      class="main-flower-section-three deactive"
+      data-active="fourthActive"
+      ref="fourthAnimated"
+    >
       <div class="main-flower-section-text-three">
         <h1>Venha nos visitar</h1>
         <p>e conferir nosso trabalho em primeira mão.</p>
@@ -185,7 +203,11 @@
       </div>
       <img src="public\logo\location.png" alt="image-location" />
     </section>
-    <section class="main-flower-sec-three">
+    <section
+      class="main-flower-sec-three deactive"
+      data-active="fifthActive"
+      ref="fifthAnimated"
+    >
       <div class="main-flower-form">
         <div class="main-flower-form-inner">
           <label><span>Nome: </span><input type="text" name="" /></label>
@@ -208,21 +230,49 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { FlowerList } from "~/server/mock/flowerlist";
+import { ref, onMounted } from "vue";
+import { flowerList } from "../../server/mock/flowerList";
 
 const index = ref(0);
 const transition = ref("slide-forward");
 
+const firstAnimated = ref<HTMLDivElement | null>(null);
+const secondAnimated = ref<HTMLDivElement | null>(null);
+const thirdAnimated = ref<HTMLDivElement | null>(null);
+const fourthAnimated = ref<HTMLDivElement | null>(null);
+const fifthAnimated = ref<HTMLDivElement | null>(null);
+
 const nextFlower = () => {
   transition.value = "slide-forward";
-  index.value = (index.value + 1) % FlowerList.length;
+  index.value = (index.value + 1) % flowerList.length;
 };
 
 const prevFlower = () => {
   transition.value = "slide-backward";
-  index.value = (index.value - 1 + FlowerList.length) % FlowerList.length;
+  index.value = (index.value - 1 + flowerList.length) % flowerList.length;
 };
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const activeClass = entry.target.getAttribute("data-active");
+          if (activeClass) {
+            entry.target.classList.add(activeClass);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  if (firstAnimated.value) observer.observe(firstAnimated.value);
+  if (secondAnimated.value) observer.observe(secondAnimated.value);
+  if (thirdAnimated.value) observer.observe(thirdAnimated.value);
+  if (fourthAnimated.value) observer.observe(fourthAnimated.value);
+  if (fifthAnimated.value) observer.observe(fifthAnimated.value);
+});
 </script>
 
 <style src="./AppHomeStyle.less"></style>

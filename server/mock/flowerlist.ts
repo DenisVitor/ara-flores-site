@@ -2,7 +2,8 @@ interface Flowers {
   name: string;
   image: string;
 }
-export const FlowerList: Flowers[] = [
+
+export const flowerList: Flowers[] = [
   {
     name: "Flower1",
     image: "/images/fi001.png",

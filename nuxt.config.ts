@@ -8,5 +8,5 @@ export default defineNuxtConfig({
   },
   mapbox: {
     accessToken: "{API_KEY}",
-  },
+  }
 });
